@@ -40,6 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assignment.cs" />
+    <Compile Include="Loggers\DebugEventLogger.cs" />
     <Compile Include="IEventLogger.cs" />
     <Compile Include="Namespace.cs" />
     <Compile Include="Random\BernoulliFilterBuilder.cs" />

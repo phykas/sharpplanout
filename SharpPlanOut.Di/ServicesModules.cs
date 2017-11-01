@@ -1,4 +1,5 @@
 ﻿using Ninject.Modules;
+using SharpPlanOut.Core.Loggers;
 using SharpPlanOut.Demo;
 using SharpPlanOut.Logger.MongoDb;
 using SharpPlanOut.Services.Interfaces;
