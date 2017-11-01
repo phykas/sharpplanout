@@ -5,13 +5,13 @@ using System.Collections.Generic;
 
 namespace SharpPlanOut.Services.Namespace
 {
-    public class NamespaceManager : INamespaceManager
+    public class NamespaceManagerService : INamespaceManagerService
     {
         public Dictionary<string, object> Inputs { get; set; }
         public IEventLogger EventLogger { get; set; }
         public Dictionary<string, Core.Namespace> Namespaces { get; set; }
 
-        public NamespaceManager(IEventLogger eventLogger)
+        public NamespaceManagerService(IEventLogger eventLogger)
         {
             EventLogger = eventLogger;
             Namespaces = new Dictionary<string, Core.Namespace>();

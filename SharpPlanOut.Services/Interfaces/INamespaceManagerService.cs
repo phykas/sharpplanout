@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace SharpPlanOut.Services.Interfaces
 {
-    public interface INamespaceManager
+    public interface INamespaceManagerService
     {
         Dictionary<string, object> Inputs { get; set; }
         IEventLogger EventLogger { get; set; }

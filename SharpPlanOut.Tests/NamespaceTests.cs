@@ -190,7 +190,7 @@ namespace SharpPlanOut.Tests
             //arrange
             _experiment1 = new Experiment("test1", new Dictionary<string, object>()
             {
-                {"userid", "filip"}
+                {"userid", "123"}
             }, (assignment, objects) =>
             {
                 assignment.Set(_experiment1ParamName, new UniformChoiceBuilder(new Dictionary<string, object>()
@@ -217,7 +217,7 @@ namespace SharpPlanOut.Tests
             //arrange
             _experiment1 = new Experiment("test1", new Dictionary<string, object>()
             {
-                {"userid", "filip"}
+                {"userid", "123"}
             }, (assignment, objects) =>
             {
                 assignment.Set(_experiment1ParamName, new UniformChoiceBuilder(new Dictionary<string, object>()

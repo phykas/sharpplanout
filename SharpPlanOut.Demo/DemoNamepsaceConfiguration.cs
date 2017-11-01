@@ -7,13 +7,13 @@ namespace SharpPlanOut.Demo
 {
     public class NamepsaceConfiguration
     {
-        public static void Configure(INamespaceManager namespaceManager)
+        public static void Configure(INamespaceManagerService namespaceManager)
         {
             VideoPromotionNamespace(namespaceManager);
             TextNamespace(namespaceManager);
         }
 
-        private static void TextNamespace(INamespaceManager namespaceManager)
+        private static void TextNamespace(INamespaceManagerService namespaceManager)
         {
             var myfirstNamespace = new SimpleNamespace("textNamespace", namespaceManager.Inputs, "userId", 100);
 
@@ -36,7 +36,7 @@ namespace SharpPlanOut.Demo
             namespaceManager.AddNamespace(myfirstNamespace);
         }
 
-        private static void VideoPromotionNamespace(INamespaceManager namespaceManager)
+        private static void VideoPromotionNamespace(INamespaceManagerService namespaceManager)
         {
             var myfirstNamespace = new SimpleNamespace("video_promotion", namespaceManager.Inputs, "userId", 100);
 

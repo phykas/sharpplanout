@@ -12,9 +12,9 @@ namespace SharpPlanOut.Di
         public override void Load()
         {
             //Demo namespace binding
-            Bind<INamespaceManager>().ToMethod(context =>
+            Bind<INamespaceManagerService>().ToMethod(context =>
             {
-                var menager = new NamespaceManager(new DebugEventLogger());
+                var menager = new NamespaceManagerService(new DebugEventLogger());
                 NamepsaceConfiguration.Configure(menager);
                 return menager;
             });

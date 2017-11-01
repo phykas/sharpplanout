@@ -61,7 +61,7 @@ namespace SharpPlanOut.Tests
                     },
                     new Dictionary<string, object>()
                         {
-                            {"user_id", "filip123"}
+                            {"user_id", "123"}
                         }));
                 return false;
             });
@@ -70,7 +70,7 @@ namespace SharpPlanOut.Tests
 
             //assert
             Assert.IsNotNull(result);
-            Assert.AreEqual("test3", result);
+            Assert.AreEqual("test2", result);
         }
 
         [TestMethod]
@@ -87,7 +87,7 @@ namespace SharpPlanOut.Tests
                     },
                         new Dictionary<string, object>()
                         {
-                            {"user_id", "filip123"}
+                            {"user_id", "123"}
                         }));
                     return false;
                 })
@@ -116,7 +116,7 @@ namespace SharpPlanOut.Tests
                         },
                     new Dictionary<string, object>()
                         {
-                            {"user_id", "filip123"}
+                            {"user_id", "123"}
                         }));
                 return true;
             })
@@ -153,7 +153,7 @@ namespace SharpPlanOut.Tests
                         },
                             new Dictionary<string, object>()
                             {
-                                {"user_id", "filip123" + i1}
+                                {"user_id", "123" + i1}
                             }));
                         return true;
                     });

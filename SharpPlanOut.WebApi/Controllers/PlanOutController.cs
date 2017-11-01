@@ -8,9 +8,9 @@ namespace SharpPlanOut.WebApi.Controllers
     [RoutePrefix("planout")]
     public class PlanOutController : ApiController
     {
-        private readonly INamespaceManager _namespaceManager;
+        private readonly INamespaceManagerService _namespaceManager;
 
-        public PlanOutController(INamespaceManager namespaceManager)
+        public PlanOutController(INamespaceManagerService namespaceManager)
         {
             _namespaceManager = namespaceManager;
         }

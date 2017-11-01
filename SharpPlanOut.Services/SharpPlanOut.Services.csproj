@@ -39,8 +39,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Interfaces\INamespaceManager.cs" />
-    <Compile Include="Namespace\NamespaceManager.cs" />
+    <Compile Include="Interfaces\INamespaceManagerService.cs" />
+    <Compile Include="Namespace\NamespaceManagerService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
