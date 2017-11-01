@@ -1,2 +1,3 @@
-# sharpplanout
-C# port of Facebook's PlanOut A/B testing system with additional functionality
+# Sharp-Planout
+C# port of Facebook's [PlanOut](https://github.com/facebook/planout) A/B testing system.
+
