@@ -14,7 +14,6 @@ namespace SharpPlanOut.Tests
         private SimpleNamespace _simpleNamespace;
         private string _experiment1ParamName = "test";
         private string _experiment2ParamName = "test";
-        private string _experiment3ParamName = "test3";
         private string _defaultParamName = "test";
         private Experiment _experimentDefault;
         private List<Dictionary<string, object>> _logs = new List<Dictionary<string, object>>();

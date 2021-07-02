@@ -14,10 +14,10 @@ namespace SharpPlanOut.Tests
         {
             //arrange
             Assignment ass = new Assignment(new Dictionary<string, object>(), "Exper1");
-            Dictionary<object, int> valueCounter = new Dictionary<object, int>();
+            var valueCounter = new Dictionary<object, int>();
 
             //act
-            for (int i = 0; i < 100000; i++)
+            for (var i = 0; i < 100000; i++)
             {
                 var value =
                     ass.Set("has_test_Istest" + i, new WeightedChoiceBuilder(new Dictionary<string, object>()
@@ -138,10 +138,10 @@ namespace SharpPlanOut.Tests
         public void ExperimentTest_Uniform_ShouldDistributeUniformly()
         {
             //arrange
-            Dictionary<object, int> counter = new Dictionary<object, int>();
+            var counter = new Dictionary<object, int>();
 
             //act
-            for (int i = 0; i < 10000; i++)
+            for (var i = 0; i < 10000; i++)
             {
                 var i1 = i;
                 var experiment = new Experiment("first_experiment", new Dictionary<string, object>(),

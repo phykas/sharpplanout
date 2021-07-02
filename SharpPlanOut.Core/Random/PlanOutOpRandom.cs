@@ -47,7 +47,7 @@ namespace SharpPlanOut.Core.Random
 
         private static string Hash(string input)
         {
-            using (SHA1Managed sha1 = new SHA1Managed())
+            using (var sha1 = new SHA1Managed())
             {
                 var hash = sha1.ComputeHash(Encoding.UTF8.GetBytes(input));
                 var sb = new StringBuilder(hash.Length * 2);

@@ -35,7 +35,7 @@ namespace SharpPlanOut.Services.Namespace
         public object GetParams(Dictionary<string, object> inputs)
         {
             Inputs = inputs;
-            Dictionary<string, object> namespaceValues = new Dictionary<string, object>();
+            var namespaceValues = new Dictionary<string, object>();
             foreach (var key in Namespaces.Keys)
             {
                 Namespaces[key]._inputs = Inputs;

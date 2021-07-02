@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace SharpPlanOut.Demo
 {
-    public class NamepsaceConfiguration
+    public class NamespaceConfiguration
     {
         public static void Configure(INamespaceManagerService namespaceManager)
         {
@@ -15,9 +15,9 @@ namespace SharpPlanOut.Demo
 
         private static void TextNamespace(INamespaceManagerService namespaceManager)
         {
-            var myfirstNamespace = new SimpleNamespace("textNamespace", namespaceManager.Inputs, "userId", 100);
+            var firstNamespace = new SimpleNamespace("textNamespace", namespaceManager.Inputs, "userId", 100);
 
-            Experiment demoButtonEx = new Experiment("textExperiment", namespaceManager.Inputs, (assignment, objects) =>
+            var demoButtonEx = new Experiment("textExperiment", namespaceManager.Inputs, (assignment, objects) =>
             {
                 var demoButton = assignment.Set("demoButton", new UniformChoiceBuilder(new Dictionary<string, object>()
                 {
@@ -31,16 +31,16 @@ namespace SharpPlanOut.Demo
 
                 return true;
             }) { Log = objects => { namespaceManager.EventLogger.Log(objects); } };
-            myfirstNamespace.AddExperiment(demoButtonEx, 100);
+            firstNamespace.AddExperiment(demoButtonEx, 100);
 
-            namespaceManager.AddNamespace(myfirstNamespace);
+            namespaceManager.AddNamespace(firstNamespace);
         }
 
         private static void VideoPromotionNamespace(INamespaceManagerService namespaceManager)
         {
-            var myfirstNamespace = new SimpleNamespace("video_promotion", namespaceManager.Inputs, "userId", 100);
+            var firstNamespace = new SimpleNamespace("video_promotion", namespaceManager.Inputs, "userId", 100);
 
-            Experiment videoExperiment = new Experiment("video_experiment1", namespaceManager.Inputs,
+            var videoExperiment = new Experiment("video_experiment1", namespaceManager.Inputs,
                 (assignment, objects) =>
                 {
                     var showVideo = assignment.Set("show_video",
@@ -67,9 +67,9 @@ namespace SharpPlanOut.Demo
 
                     return true;
                 }) { Log = objects => { namespaceManager.EventLogger.Log(objects); } };
-            myfirstNamespace.AddExperiment(videoExperiment, 100);
+            firstNamespace.AddExperiment(videoExperiment, 100);
 
-            namespaceManager.AddNamespace(myfirstNamespace);
+            namespaceManager.AddNamespace(firstNamespace);
         }
     }
 }
