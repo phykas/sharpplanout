@@ -157,7 +157,7 @@ namespace SharpPlanOut.Tests
                             }));
                         return true;
                     });
-
+                
                 var result = experiment.Get("should_open_popup");
                 if (counter.ContainsKey(result))
                 {

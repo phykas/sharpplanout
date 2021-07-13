@@ -1,7 +1,7 @@
 using SharpPlanOut.Core;
 using SharpPlanOut.Core.Random;
-using SharpPlanOut.Services.Interfaces;
 using System.Collections.Generic;
+using SharpPlanOut.Core.Namespaces;
 
 namespace SharpPlanOut.Demo
 {

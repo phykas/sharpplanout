@@ -1,23 +1,29 @@
-﻿using SharpPlanOut.Core;
-using SharpPlanOut.Services.Interfaces;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
-namespace SharpPlanOut.Services.Namespace
+namespace SharpPlanOut.Core.Namespaces
 {
+    public static class PlanoutExtensions
+    {
+        public static Dictionary<string, object> AsPlanoutDictionary(this object value) =>
+            (Dictionary<string, object>)value;
+    }
+
     public class NamespaceManagerService : INamespaceManagerService
     {
         public Dictionary<string, object> Inputs { get; set; }
         public IEventLogger EventLogger { get; set; }
-        public Dictionary<string, Core.Namespace> Namespaces { get; set; }
+        public Dictionary<string, Namespace> Namespaces { get; set; }
 
-        public NamespaceManagerService(IEventLogger eventLogger)
+        public NamespaceManagerService(Dictionary<string, object> inputs, IEventLogger eventLogger)
         {
+            Inputs = inputs;
             EventLogger = eventLogger;
-            Namespaces = new Dictionary<string, Core.Namespace>();
+            Namespaces = new Dictionary<string, Namespace>();
         }
 
-        public void AddNamespace(Core.Namespace namesp)
+        public void AddNamespace(Namespace namesp)
         {
             Namespaces.Add(namesp.Name, namesp);
         }
@@ -32,16 +38,15 @@ namespace SharpPlanOut.Services.Namespace
             return Namespaces.ContainsKey(namesp);
         }
 
-        public object GetParams(Dictionary<string, object> inputs)
+        public Dictionary<string, object> GetParams()
         {
-            Inputs = inputs;
-            var namespaceValues = new Dictionary<string, object>();
+            IEnumerable<KeyValuePair<string, object>> namespaceValues = new Dictionary<string, object>();
             foreach (var key in Namespaces.Keys)
             {
                 Namespaces[key]._inputs = Inputs;
-                namespaceValues.Add(key, Namespaces[key].GetParams());
+                namespaceValues = namespaceValues.Concat(Namespaces[key].GetParams());
             }
-            return namespaceValues;
+            return namespaceValues.ToDictionary(e=>e.Key, e=>e.Value);
         }
 
         public void LogEvent(string namesp, string eventName, Dictionary<string, object> extras)

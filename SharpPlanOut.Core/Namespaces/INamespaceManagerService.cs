@@ -1,7 +1,6 @@
-﻿using SharpPlanOut.Core;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
-namespace SharpPlanOut.Services.Interfaces
+namespace SharpPlanOut.Core.Namespaces
 {
     public interface INamespaceManagerService
     {
@@ -10,9 +9,9 @@ namespace SharpPlanOut.Services.Interfaces
 
         void AddExperiment(string namesp, Experiment exp, int segments);
 
-        object GetParams(Dictionary<string, object> inputs);
+        Dictionary<string, object> GetParams();
 
-        void AddNamespace(Core.Namespace namesp);
+        void AddNamespace(Namespace namesp);
 
         bool HasNamespace(string namesp);
 

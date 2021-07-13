@@ -3,6 +3,7 @@ using Newtonsoft.Json;
 using SharpPlanOut.Core;
 using SharpPlanOut.Core.Random;
 using System.Collections.Generic;
+using SharpPlanOut.Core.Namespaces;
 
 namespace SharpPlanOut.Tests
 {

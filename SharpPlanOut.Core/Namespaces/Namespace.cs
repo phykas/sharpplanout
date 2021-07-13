@@ -1,9 +1,9 @@
-﻿using SharpPlanOut.Core.Random;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using SharpPlanOut.Core.Random;
 
-namespace SharpPlanOut.Core
+namespace SharpPlanOut.Core.Namespaces
 {
     public class DefaultExperiment : Experiment
     {
@@ -195,11 +195,13 @@ namespace SharpPlanOut.Core
         public override void AssignExperiment()
         {
             var segment = GetSegment();
-            if (AllocationMap.ContainsKey(segment))
+            if (!AllocationMap.ContainsKey(segment))
             {
-                var experimentName = AllocationMap[segment];
-                _assignExperimentObject(experimentName);
+                return;
             }
+
+            var experimentName = AllocationMap[segment];
+            _assignExperimentObject(experimentName);
         }
 
         private void _assignExperimentObject(string experimentName)
